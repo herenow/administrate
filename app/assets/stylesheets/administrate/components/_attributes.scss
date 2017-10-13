@@ -18,6 +18,14 @@
   margin-bottom: $base-spacing;
   margin-left: 2rem;
   width: calc(85% - 1rem);
+
+  &--image {
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
 }
 
 .attribute--nested {
