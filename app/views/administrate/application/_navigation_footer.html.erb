@@ -1,0 +1,44 @@
+<% if defined?(current_user) %>
+  <div class="nav-drawer__footer">
+    <div class="nav-drawer__account">
+      <% avatar_method = [
+        :avatar_url,
+        :avatar_path,
+        :avatar,
+        :image_url,
+        :image_path,
+        :image,
+        :gravatar,
+        :gravatar_url,
+      ].find { |avatar_method| current_user.respond_to?(avatar_method) } %>
+
+      <% if avatar_method.present? %>
+        <div class="nav-drawer__account__avatar">
+          <%= image_tag current_user.send(avatar_method), alt: '' %>
+        </div>
+      <% elsif current_user.respond_to?(:email) %>
+        <div class="nav-drawer__account__avatar">
+          <%= image_tag gravatar_for_email(current_user.email), alt: '' %>
+        </div>
+      <% end %>
+
+      <div class="nav-drawer__account__details">
+        <% name_method = [
+          :name,
+          :first_name,
+          :nickname,
+          :username,
+          :user,
+          :email,
+        ].find { |name_method| current_user.respond_to?(name_method) } %>
+
+        <% if name_method.present? %>
+          <h2>Welcome,</h2>
+          <h3><%= current_user.send(name_method) %></h3>
+        <% else %>
+          <h2>Welcome</h2>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

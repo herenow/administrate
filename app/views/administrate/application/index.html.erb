@@ -33,14 +33,16 @@ It renders the `_table` partial to display details about the resources.
   </h1>
 
   <% if show_search_bar %>
-    <%= render(
-      "search",
-      search_term: search_term,
-      resource_name: display_resource_name(page.resource_name)
-    ) %>
+    <div class="main-content__search">
+      <%= render(
+        "search",
+        search_term: search_term,
+        resource_name: display_resource_name(page.resource_name)
+      ) %>
+    </div>
   <% end %>
 
-  <div>
+  <div class="main-content__navs">
     <%= link_to(
       "#{t("administrate.actions.new")} #{page.resource_name.titleize.downcase}",
       [:new, namespace, page.resource_path],
@@ -49,7 +51,7 @@ It renders the `_table` partial to display details about the resources.
   </div>
 </header>
 
-<section class="main-content__body main-content__body--flush">
+<section class="main-content__body">
   <%= render(
     "collection",
     collection_presenter: page,

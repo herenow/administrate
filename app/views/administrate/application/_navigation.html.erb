@@ -1,18 +1,19 @@
-<%#
-# Navigation
+<div class="nav-drawer">
+  <input type="checkbox" id="nav_drawer_trigger" class="nav-drawer__trigger" style="display: none;" />
 
-This partial is used to display the navigation in Administrate.
-By default, the navigation contains navigation links
-for all resources in the admin dashboard,
-as defined by the routes in the `admin/` namespace
-%>
+  <div class="nav-drawer__header">
+    <label for="nav_drawer_trigger" class="nav-drawer__opener">
+      <i class="icon sidebar"></i>
+    </label>
+    <label for="nav_drawer_trigger" class="nav-drawer__closer">
+      <i class="icon close"></i>
+    </label>
+  </div>
 
-<nav class="navigation" role="navigation">
-  <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
-    <%= link_to(
-      display_resource_name(resource),
-      [namespace, resource_index_route_key(resource)],
-      class: "navigation__link navigation__link--#{nav_link_state(resource)}"
-    ) %>
-  <% end %>
-</nav>
+  <div class="nav-drawer__main">
+    <%= render 'navigation_links' %>
+    <%= render 'navigation_extra_links' %>
+  </div>
+
+  <%= render 'navigation_footer' %>
+</div>

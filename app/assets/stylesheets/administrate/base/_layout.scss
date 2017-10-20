@@ -1,4 +1,4 @@
-html {
+body {
   background-color: $base-background-color;
   box-sizing: border-box;
 }
@@ -7,14 +7,4 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
-}
-
-figure {
-  margin: 0;
-}
-
-img,
-picture {
-  margin: 0;
-  max-width: 100%;
 }

@@ -1,6 +1,14 @@
+require 'digest'
+
 module Administrate
   module ApplicationHelper
     PLURAL_MANY_COUNT = 2.1
+
+    def gravatar_for_email(email, size = 120)
+      hash = Digest::MD5.hexdigest(email)
+
+      "//www.gravatar.com/avatar/#{hash}?s=#{size}"
+    end
 
     def render_field(field, locals = {})
       locals.merge!(field: field)

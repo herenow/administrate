@@ -1,7 +1,6 @@
 // Typography
-$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-  sans-serif !default;
+$base-font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI,
+ Roboto, Helvetica Neue, sans-serif;
 $heading-font-family: $base-font-family !default;
 
 $base-font-size: 1em !default;
@@ -61,3 +60,6 @@ $base-border: 1px solid $base-border-color !default;
 // Transitions
 $base-duration: 250ms !default;
 $base-timing: ease-in-out !default;
+
+// Breakpoints
+$mobile-breakpoint: 840px;

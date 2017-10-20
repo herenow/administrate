@@ -39,7 +39,21 @@
   transform: rotate(180deg);
 }
 
+.cell-data {
+  a {
+    color: $base-font-color;
+  }
+}
+
 .cell-data--number,
 .cell-label--number {
   text-align: right;
+}
+
+.cell-data--red {
+  color: $red;
+
+  a {
+    color: inherit;
+  }
 }

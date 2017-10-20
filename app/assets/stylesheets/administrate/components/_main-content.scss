@@ -21,9 +21,22 @@
   align-items: center;
   border-bottom: $base-border;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .main-content__page-title {
   font-size: 1.6em;
   margin-right: auto;
+}
+
+.main-content__search {
+  @media (max-width: $mobile-breakpoint) {
+    order: 3;
+    width: 100%;
+    padding: 20px 0px 10px 0px;
+  }
+}
+
+.main-content__navs {
+  margin-left: 20px;
 }

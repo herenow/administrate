@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@import "reset/normalize";
+@import "vendor/semantic-ui";
 
 @import "selectize";
 @import "datetime_picker";
@@ -12,7 +12,6 @@
 @import "base/forms";
 @import "base/layout";
 @import "base/lists";
-@import "base/tables";
 @import "base/typography";
 
 @import "components/app-container";
@@ -23,8 +22,6 @@
 @import "components/flashes";
 @import "components/form-actions";
 @import "components/main-content";
-@import "components/navigation";
 @import "components/pagination";
 @import "components/search";
-
-@import "utilities/text-color";
+@import "components/nav-drawer";

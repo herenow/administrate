@@ -28,9 +28,11 @@ By default, it renders:
   <%= render "icons" %>
 
   <div class="app-container">
-    <%= render "navigation" -%>
+    <nav class="app-container__drawer" role="navigation">
+      <%= render "navigation" -%>
+    </nav>
 
-    <main class="main-content" role="main">
+    <main class="app-container__main main-content" role="main">
       <%= render "flashes" -%>
       <%= yield %>
     </main>
