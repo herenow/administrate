@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "administrate/version"
 
 Gem::Specification.new do |s|
-  s.name = "administrate"
+  s.name = "semantic-administrate"
   s.version = Administrate::VERSION
   s.authors = ["Nick Charlton", "Grayson Wright"]
   s.email = ["nick@nickcharlton.net", "grayson@thoughtbot.com"]
