@@ -5,8 +5,9 @@ ca:
       confirm: Estàs segur?
       destroy: Destruir
       edit: Editar
-      show: Mostrar
-      new: Nou
+      edit_resource: Edita %{name}
+      show_resource: Mostra %{name}
+      new_resource: Nou %{name}
       back: Tornar
     controller:
       create:
@@ -19,8 +20,9 @@ ca:
       has_many:
         more: Mostrant %{count} de %{total_count}
         none: Cap
-      has_one:
-        not_supported: Els formularis amb relacions "HasOne" no estàn suportats.
+    form:
+      error: error
+      errors: "%{pluralized_errors} han impedit que %{resource_name} es guardés amb èxit:"
     search:
       clear: Esborrar la cerca
       label: Cerca %{resource}
