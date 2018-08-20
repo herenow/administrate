@@ -9,6 +9,8 @@ require "administrate/field/polymorphic"
 require "administrate/field/select"
 require "administrate/field/string"
 require "administrate/field/text"
+require "administrate/field/time"
+require "administrate/field/password"
 
 module Administrate
   class BaseDashboard
@@ -28,6 +30,10 @@ module Administrate
       attribute_names.each_with_object({}) do |name, attributes|
         attributes[name] = attribute_type_for(name)
       end
+    end
+
+    def all_attributes
+      attribute_types.keys
     end
 
     def form_attributes
@@ -59,7 +65,7 @@ module Administrate
         field = self.class::ATTRIBUTE_TYPES[key]
 
         next key if association_classes.include?(field)
-        key if association_classes.include?(field.try :deferred_class)
+        key if association_classes.include?(field.try(:deferred_class))
       end.compact
     end
 
