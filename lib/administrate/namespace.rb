@@ -10,6 +10,22 @@ module Administrate
       end
     end
 
+    def index_resources
+      @index_resources ||= begin
+        index_routes = routes.select do |_path, action|
+          action == "index"
+        end
+
+        index_routes.uniq!
+
+        index_routes.map do |route|
+          path = route[0]
+
+          ::Administrate::Namespace::Resource.new(namespace, path)
+        end
+      end
+    end
+
     def routes
       @routes ||= all_routes.select do |controller, _action|
         controller.starts_with?("#{namespace}/")
